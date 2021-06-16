@@ -1,12 +1,16 @@
 package cn.pedant.SweetAlert.sample;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
@@ -25,15 +29,24 @@ public class SampleActivity extends Activity implements View.OnClickListener {
         int[] btnIds = {
                 R.id.basic_test, R.id.styled_text_and_stroke, R.id.basic_test_without_buttons, R.id.under_text_test,
                 R.id.error_text_test, R.id.success_text_test, R.id.warning_confirm_test, R.id.warning_cancel_test,
-                R.id.custom_img_test, R.id.progress_dialog, R.id.neutral_btn_test, R.id.disabled_btn_test, R.id.dark_style,
+                R.id.custom_img_test, R.id.progress_dialog, R.id.neutral_btn_test, R.id.disabled_btn_test,
                 R.id.custom_view_test, R.id.custom_btn_colors_test
         };
         for (Integer id : btnIds) {
             findViewById(id).setOnClickListener(this);
             findViewById(id).setOnTouchListener(Constants.FOCUS_TOUCH_LISTENER);
         }
+
+        CheckBox dark_style = findViewById(R.id.dark_style);
+        dark_style.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                SweetAlertDialog.DARK_STYLE = isChecked;
+            }
+        });
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -86,10 +99,21 @@ public class SampleActivity extends Activity implements View.OnClickListener {
                             @Override
                             public void onClick(SweetAlertDialog sweetAlertDialog) {
                                 // reuse previous dialog instance
-                                sweetAlertDialog.setTitleText("Deleted!")
-                                        .setContentText("Your imaginary file has been deleted!")
-                                        .setConfirmClickListener(null)
-                                        .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
+                                sweetAlertDialog
+                                        .setTitleText("Loading")
+                                        .setContentText("Please wait...")
+                                        .hideConfirmButton()
+                                        .changeAlertType(SweetAlertDialog.PROGRESS_TYPE);
+                                Handler handler = new Handler();
+                                handler.postDelayed(new Runnable() {
+                                    public void run() {
+                                        sweetAlertDialog
+                                                .setTitleText("Deleted!")
+                                                .setContentText("Your imaginary file has been deleted!")
+                                                .setConfirmClickListener(null)
+                                                .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
+                                    }
+                                }, 3000);
                             }
                         })
                         .show();
@@ -112,14 +136,6 @@ public class SampleActivity extends Activity implements View.OnClickListener {
                                         .setCancelClickListener(null)
                                         .setConfirmClickListener(null)
                                         .changeAlertType(SweetAlertDialog.ERROR_TYPE);
-
-                                // or you can new a SweetAlertDialog to show
-                               /* sDialog.dismiss();
-                                new SweetAlertDialog(SampleActivity.this, SweetAlertDialog.ERROR_TYPE)
-                                        .setTitleText("Cancelled!")
-                                        .setContentText("Your imaginary file is safe :)")
-                                        .setConfirmText("OK")
-                                        .show();*/
                             }
                         })
                         .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
@@ -211,14 +227,6 @@ public class SampleActivity extends Activity implements View.OnClickListener {
                     }
                 });
                 disabledBtnDialog.show();
-                break;
-
-            case R.id.dark_style:
-                if (((CheckBox) v).isChecked()) {
-                    SweetAlertDialog.DARK_STYLE = true;
-                } else {
-                    SweetAlertDialog.DARK_STYLE = false;
-                }
                 break;
 
             case R.id.custom_view_test:

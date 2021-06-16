@@ -14,7 +14,6 @@ public class Constants {
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
                 case MotionEvent.ACTION_BUTTON_PRESS:
-
                     drawable.setColorFilter(0x20000000, PorterDuff.Mode.SRC_ATOP);
                     v.invalidate();
                     break;
