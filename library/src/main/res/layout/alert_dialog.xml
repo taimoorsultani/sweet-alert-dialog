@@ -68,7 +68,7 @@
                 android:id="@+id/mask_right"
                 android:layout_width="35dp"
                 android:layout_height="80dp"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:layout_marginTop="-13dp"
                 android:background="@android:color/transparent" />
 
@@ -76,8 +76,8 @@
                 android:id="@+id/mask_left"
                 android:layout_width="21dp"
                 android:layout_height="60dp"
-                android:layout_gravity="left"
-                android:layout_marginLeft="-3dp"
+                android:layout_gravity="start"
+                android:layout_marginStart="-3dp"
                 android:background="@android:color/transparent" />
 
             <View
@@ -185,7 +185,7 @@
             <Button
                 android:id="@+id/cancel_button"
                 style="@style/dialog_blue_button"
-                android:layout_marginRight="25dp"
+                android:layout_marginEnd="25dp"
                 android:background="@drawable/red_button_background"
                 android:visibility="gone"
                 tools:text="cancel"
@@ -194,8 +194,8 @@
             <Button
                 android:id="@+id/neutral_button"
                 style="@style/dialog_blue_button"
-                android:layout_marginLeft="-10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginStart="-10dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/gray_button_background"
                 android:visibility="gone"
                 tools:text="neutral"
@@ -204,7 +204,7 @@
             <Button
                 android:id="@+id/confirm_button"
                 style="@style/dialog_blue_button"
-                android:text="Ok"
+                android:text="@string/ok"
                 android:visibility="gone" />
         </LinearLayout>
 

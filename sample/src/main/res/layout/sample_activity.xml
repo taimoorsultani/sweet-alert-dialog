@@ -22,7 +22,7 @@
             android:id="@+id/dark_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/logo_img"
+            android:layout_toEndOf="@id/logo_img"
             android:scaleX="0.8"
             android:scaleY="0.8"
             android:text="Dark style"

@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 public class Constants {
-    //make bg a little bit darker
+    // Make bg a little bit darker
     public static final View.OnTouchListener FOCUS_TOUCH_LISTENER = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View v, MotionEvent event) {

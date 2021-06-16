@@ -3,7 +3,7 @@
     android:versionCode="14"
     android:versionName="1.6.2">
 
-    <uses-sdk android:targetSdkVersion="27" />
+    <uses-sdk android:targetSdkVersion="30" />
     <application />
 
 </manifest>

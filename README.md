@@ -31,10 +31,8 @@ Some screenshots of the new features:
 
 Inspired by JavaScript [SweetAlert](http://tristanedwards.me/sweetalert)
 
-[Demo Download](https://github.com/F0RIS/sweet-alert-dialog/releases/download/1.5.3/sample-v1.5.3.apk)
-
 ## ScreenShot
-![image](https://github.com/pedant/sweet-alert-dialog/raw/master/change_type.gif)
+![image](https://github.com/taimoorsultani/sweet-alert-dialog/raw/master/change_type.gif)
 
 ## Setup
 The simplest way to use SweetAlertDialog is to add the library as aar dependency to your build.
@@ -42,20 +40,22 @@ The simplest way to use SweetAlertDialog is to add the library as aar dependency
 **Maven**
 
     <dependency>
-      <groupId>com.github.f0ris.sweetalert</groupId>
+      <groupId>com.github.taimoorsultani</groupId>
       <artifactId>library</artifactId>
-      <version>1.6.2</version>
+      <version>1.7.0</version>
       <type>aar</type>
     </dependency>
 
 **Gradle**
+
+
 
     repositories {
         mavenCentral()
     }
 
     dependencies {
-        implementation 'com.github.f0ris.sweetalert:library:1.6.2'
+        implementation 'com.github.taimoorsultani:sweet-alert-dialog:1.7.0'
     }
 
 ## Usage
