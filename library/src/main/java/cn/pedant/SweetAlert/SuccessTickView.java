@@ -29,12 +29,12 @@ public class SuccessTickView extends View {
         init();
     }
 
-    public SuccessTickView(Context context, AttributeSet attrs){
-        super(context,attrs);
+    public SuccessTickView(Context context, AttributeSet attrs) {
+        super(context, attrs);
         init();
     }
 
-    private void init () {
+    private void init() {
         mPaint = new Paint();
         mPaint.setColor(getResources().getColor(R.color.success_stroke_color));
         mLeftRectWidth = CONST_LEFT_RECT_W;
@@ -78,13 +78,13 @@ public class SuccessTickView extends View {
     }
 
     public float dip2px(float dpValue) {
-        if(mDensity == -1) {
+        if (mDensity == -1) {
             mDensity = getResources().getDisplayMetrics().density;
         }
         return dpValue * mDensity + 0.5f;
     }
 
-    public void startTickAnim () {
+    public void startTickAnim() {
         // hide tick
         mLeftRectWidth = 0;
         mRightRectWidth = 0;
