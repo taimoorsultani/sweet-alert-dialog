@@ -1,9 +1,11 @@
-Sweet Alert Dialog
-===================
+# Sweet Alert Dialog
+
 SweetAlert for Android, a beautiful and clever alert dialog
 
-#### This is the most advanced and contemporary fork of the apparently dead project 
+#### This is the most advanced and contemporary fork of the apparently dead project
+
 **Added:**
+
 - Ability to set custom view
 - More convenient interface to bind listeners (like in AlertDialog)
 - Third neutral button with own listener, colors, methods and etc.
@@ -22,6 +24,7 @@ Some screenshots of the new features:
 <img src="https://user-images.githubusercontent.com/10178982/59605653-eee87d80-9117-11e9-9421-b116536c9388.png" width="30%"/>
 
 #### Known issues:
+
 - [ ] Bug with buttons height if custom view too big and need scrollview
 - [ ] Buttons can handle only one line strings
 
@@ -32,9 +35,11 @@ Some screenshots of the new features:
 Inspired by JavaScript [SweetAlert](http://tristanedwards.me/sweetalert)
 
 ## ScreenShot
+
 ![image](https://github.com/taimoorsultani/sweet-alert-dialog/raw/master/change_type.gif)
 
 ## Setup
+
 The simplest way to use SweetAlertDialog is to add the library as aar dependency to your build.
 
 **Maven**
@@ -42,20 +47,18 @@ The simplest way to use SweetAlertDialog is to add the library as aar dependency
     <dependency>
       <groupId>com.github.taimoorsultani</groupId>
       <artifactId>library</artifactId>
-      <version>1.7.0</version>
+      <version>1.7.1</version>
       <type>aar</type>
     </dependency>
 
 **Gradle**
-
-
 
     repositories {
         mavenCentral()
     }
 
     dependencies {
-        implementation 'com.github.taimoorsultani:sweet-alert-dialog:1.7.0'
+        implementation 'com.github.taimoorsultani:sweet-alert-dialog:1.7.1'
     }
 
 ## Usage
@@ -71,6 +74,7 @@ show material progress
 ![image](https://github.com/pedant/sweet-alert-dialog/raw/master/play_progress.gif)
 
 You can customize progress bar dynamically with materialish-progress methods via **SweetAlertDialog.getProgressHelper()**:
+
 - resetCount()
 - isSpinning()
 - spin()
@@ -147,7 +151,6 @@ A message with a custom view：
             .setCustomView(editText)
             .show();
 
-
 Different ways to bind the listener to button：
 
     new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
@@ -168,7 +171,6 @@ Different ways to bind the listener to button：
         })
         .show();
 
-
 Disable button
 
     final SweetAlertDialog disabledBtnDialog = new SweetAlertDialog(this, SweetAlertDialog.NORMAL_TYPE)
@@ -184,7 +186,6 @@ Disable button
         }
     });
     disabledBtnDialog.show();
-
 
 **Change** the dialog style upon confirming：
 
@@ -230,5 +231,3 @@ Disable button
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
-
-
